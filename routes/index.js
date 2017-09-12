@@ -5,18 +5,15 @@ var db = require('monk')('localhost/nodeblog');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  /*var db = req.db;
-  //var posts = db.get('posts');
-  //test
-  var posts = {a: 'a'};
+  var db = req.db;
+  var posts = db.get('posts');
   posts.find({}, {}, (err, posts) => {
     res.render('index', {
       title: 'Express',
       flashmsg: '',
       posts: posts
     });
-  });*/
-  res.render('index', { test: 'haashaahh' });
+  });
 });
 
 module.exports = router;
