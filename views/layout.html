@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>title</title>
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/posts/add">Add Post</a></li>
+        <li><a href="/categories/add">Add Category</a></li>
+      </ul>
+    </nav>
+
+    <!-- Flash Messages -->
+    <!--<% if ( flashmsg.length > 0 ) { %>
+      <p>Message: <%= flashmsg %> </p>
+    <% } %>-->
+
+    <!-- Body -->
+    {% block body %}{% endblock %}
+
+  </body>
+</html>

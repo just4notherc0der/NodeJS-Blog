@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
 var session = require('express-session');
+var nunjucks = require('nunjucks');
 var mongo = require('mongodb');
 var db = require('monk')('localhost/nodeblog');
 var multer = require('multer');
@@ -17,8 +18,11 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'html');
+nunjucks.configure(path.join(__dirname, 'views'), {
+    autoescape: true,
+    express: app
+});
 
 // multer for file uploads
 //app.use(multer({ dest: './public/images/uploads' }));
